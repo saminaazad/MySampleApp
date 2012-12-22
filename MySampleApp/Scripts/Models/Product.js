@@ -3,9 +3,9 @@
 
     url: function () {
         if (this.isNew())
-            return "/item";
+            return "/items";
         else
-            return "/item/" + this.get('ProductId');
+            return "/items/" + this.get('ProductId');
     },
 
     initialize: function () {

@@ -27,9 +27,11 @@
         }
         var self = this;
         $(this.el).find("input").each(function (index, element) {
-            var map = {};
-            map[element.id] = element.value;
-            self.model.set(map);
+            if (element.id != "ProductId") {
+                var map = {};
+                map[element.id] = element.value;
+                self.model.set(map);
+            }
         });
         this.model.save({},{ success: this.operationSuccess });
     },

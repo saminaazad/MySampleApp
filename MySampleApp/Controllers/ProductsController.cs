@@ -32,17 +32,21 @@ namespace MySampleApp.Controllers
             return View(id);
         }
 
-        public ActionResult List()
-        {
-            return Json(_products, JsonRequestBehavior.AllowGet);
-        }
+        #region RESTful API
 
         [HttpGet]
         [ActionName("Action")]
-        public ActionResult Get(int id)
+        public ActionResult Get(int? id)
         {
-            var product = _products.FirstOrDefault(x => x.ProductId == id);
-            return Json(product, JsonRequestBehavior.AllowGet);
+            if (id.HasValue)
+            {
+                var product = _products.FirstOrDefault(x => x.ProductId == id);
+                return Json(product, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(_products, JsonRequestBehavior.AllowGet);
+            }
         }
 
         [HttpPost]
@@ -76,5 +80,7 @@ namespace MySampleApp.Controllers
 
             return Json(null, JsonRequestBehavior.AllowGet);
         }
+
+        #endregion
     }
 }

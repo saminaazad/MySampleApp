@@ -15,20 +15,14 @@ namespace MySampleApp
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-               "Product",
-               "product/{id}",
+               "Products/Detail",
+               "products/{id}",
                new { controller = "Products", action = "Product" }
-           );
+            );
             
             routes.MapRoute(
-                "Products/List", 
-                "items",
-                new { controller = "Products", action = "List" }
-            );
-
-            routes.MapRoute(
                 "Product/Details",
-                "item/{id}",
+                "items/{id}",
                 new { controller = "Products", action = "Action", id = UrlParameter.Optional }
             );
             

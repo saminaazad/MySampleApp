@@ -28,7 +28,7 @@ var ProductListItemView = Backbone.View.extend({
     },
 
     render: function () {
-        var url = '/product/' + this.model.get("ProductId");
+        var url = '/products/' + this.model.get("ProductId");
         var link = $("<a></a>").attr("href", url).html(this.model.get("ProductName"));
         $(this.el).html(link);
         return this;
