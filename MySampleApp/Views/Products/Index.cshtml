@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="@Url.Content("~/Scripts/Models/Product.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/Collections/Products.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/Views/ProductListView.js")" type="text/javascript"></script>
+
+<h1>Products</h1>
+<div id="product-list"></div>
+
+<script type="text/javascript">
+
+    var products = new Products();
+    products.fetch({success:function(){
+            var productListView = new ProductListView({
+                collection: products,
+                el: $('#product-list')
+            });
+
+            productListView.render();
+        }
+    });
+
+    
+
+</script>
+
