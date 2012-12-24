@@ -14,8 +14,8 @@
         var self = this;
         $(this.el).empty();
 
-        _(this.listItemViews).each(function (dv) {
-            $(self.el).append(dv.render().el);
+        _(this.listItemViews).each(function (itemView) {
+            $(self.el).append(itemView.render().el);
         });
     }
 });
@@ -34,8 +34,3 @@ var ProductListItemView = Backbone.View.extend({
         return this;
     }
 });
-
-
-
-
-

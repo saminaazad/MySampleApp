@@ -17,11 +17,11 @@ namespace MySampleApp
             routes.MapRoute(
                "Products/Detail",
                "products/{id}",
-               new { controller = "Products", action = "Product" }
+               new { controller = "Products", action = "Details" }
             );
             
             routes.MapRoute(
-                "Product/Details",
+                "Products",
                 "items/{id}",
                 new { controller = "Products", action = "Action", id = UrlParameter.Optional }
             );

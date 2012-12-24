@@ -27,7 +27,7 @@ namespace MySampleApp.Controllers
             return View();
         }
 
-        public ActionResult Product(int id)
+        public ActionResult Details(int id)
         {
             return View(id);
         }

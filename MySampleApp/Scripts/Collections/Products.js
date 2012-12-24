@@ -1,11 +1,11 @@
 ﻿Products = Backbone.Collection.extend({
-        model: Product,
+    model: Product,
 
-        initialize: function () {
-            _.bindAll(this, "url");
-        },
+    initialize: function () {
+        _.bindAll(this, "url");
+    },
 
-        url: function () {
-            return "/items";
-        }
-    });
+    url: function () {
+        return "/items";
+    }
+});

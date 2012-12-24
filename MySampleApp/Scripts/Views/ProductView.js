@@ -22,9 +22,6 @@
     },
 
     save: function () {
-        if (this.model.isNew()) {
-            this.model.set({ PropertyId: 0 });
-        }
         var self = this;
         $(this.el).find("input").each(function (index, element) {
             if (element.id != "ProductId") {

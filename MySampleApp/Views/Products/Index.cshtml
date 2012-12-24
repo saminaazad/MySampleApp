@@ -11,7 +11,6 @@
 <div id="product-list"></div>
 
 <script type="text/javascript">
-
     var products = new Products();
     products.fetch({success:function(){
             var productListView = new ProductListView({
@@ -22,8 +21,5 @@
             productListView.render();
         }
     });
-
-    
-
 </script>
 
